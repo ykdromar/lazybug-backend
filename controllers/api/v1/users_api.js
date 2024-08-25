@@ -100,12 +100,12 @@ module.exports.editUser = async function (req, res) {
     if (user) {
       if (req.file != null) {
         aws.config.setPromisesDependency();
-        aws.config.update(env.BUCKET);
+        aws.config.update(env.bucket);
         const s3 = new aws.S3();
         var params = {
           ACL: "public-read",
           ContentType: "image/png, image/jpeg, image/jpg",
-          Bucket: env.BUCKET_NAME,
+          Bucket: env.bucket_name,
           Body: fs.createReadStream(req.file.path),
           Key: `${req.file.fieldname}-${Date.now()}.${
             req.file.originalname.split(".")[1]

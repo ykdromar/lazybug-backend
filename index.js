@@ -5,20 +5,19 @@ const app = express();
 const server = require("http").createServer(app);
 app.use(cors());
 const bodyParser = require("body-parser");
-const port = 8000;
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 const path = require("path");
 const env = require("./config/environment");
-const morgan = require("morgan");
 const db = require("./config/mongoose");
 const session = require("express-session");
 const passport = require("passport");
 const passportJWT = require("./config/passport-jwt-strategy");
 const chatSocket = require("./config/chat_sockets.js").chatSockets(server);
+const port = env.port;
+
 app.use("/uploads", express.static(__dirname + "/uploads"));
 
-app.use(morgan(env.morgan.mode, env.morgan.options));
 app.use(passport.initialize());
 //use express router
 app.use("/", require("./routes"));

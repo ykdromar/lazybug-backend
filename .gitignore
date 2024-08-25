@@ -3,3 +3,4 @@ node_modules
 production_logs
 .env
 /ssl
+*.env

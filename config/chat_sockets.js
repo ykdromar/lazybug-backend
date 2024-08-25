@@ -3,7 +3,7 @@ const env = require("./environment");
 module.exports.chatSockets = function (socketServer) {
   let io = require("socket.io")(socketServer, {
     cors: {
-      origin: `https://lazybug.ykdromar.com`,
+      origin: env.chat_socket_origin,
       methods: ["GET", "POST"],
     },
   });

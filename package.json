@@ -5,7 +5,7 @@
   "description": "A social media web application",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js",
+    "dev": "export NODE_ENV=dev&& nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -22,16 +22,13 @@
     "del": "^4.1.1",
     "dotenv": "^16.1.4",
     "express": "^4.18.1",
-    "express-ejs-layouts": "^2.5.1",
     "express-session": "^1.17.3",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^6.6.4",
-    "morgan": "^1.10.0",
     "multer": "^1.4.5-lts.1",
-    "nodemailer": "^6.8.0",
+    "nodemon": "^3.1.4",
     "passport": "^0.6.0",
     "passport-jwt": "^4.0.0",
-    "rotating-file-stream": "^3.0.4",
     "socket.io": "^4.5.3"
   },
   "devDependencies": {
